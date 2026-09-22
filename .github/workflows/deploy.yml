@@ -32,7 +32,7 @@ jobs:
           python -m pip install --no-deps --no-build-isolation . ./sdk/python
           python -m pip check
           ruff check .
-          pytest -q --basetemp=.local/pytest-deploy
+          python -m pytest -q --basetemp=.local/pytest-deploy
           python scripts/check_licenses.py
           pip-audit --require-hashes -r requirements.lock
       - uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed # v2
