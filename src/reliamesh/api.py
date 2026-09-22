@@ -327,10 +327,12 @@ using structured reliability signals. API uptime alone does not tell that story.
 <p>Send outcomes, durations, counters, and opaque version identifiers. The event contract
 rejects prompts, responses, tool arguments, arbitrary attributes, and exception messages.</p>
 <p>Authenticated ingestion · Python SDK · Deterministic detection · SQLite self-hosting</p>
-<p><a href="/openapi.json">Versioned API contract</a> · <a href="/health">Service health</a></p>
+<p><a href="https://github.com/PrefilerLabs/reliamesh">Source &amp; self-hosting</a> ·
+<a href="https://github.com/PrefilerLabs/reliamesh/tree/main/sdk/python">Python SDK</a> ·
+<a href="/openapi.json">API contract</a> · <a href="/health">Service health</a></p>
 <h2>Early release. Evidence first.</h2><p>Managed access is provisioned by the operator.
-Cross-organization network intelligence is disabled until independent, verified evidence exists.
-No customer counts, performance claims, or sample incidents are presented as real adoption.</p>
+ReliaMesh 0.1.0 supports tenant-local detection. Cross-organization network intelligence
+is disabled until independent, verified contributor cohorts exist.</p>
 <footer>© 2026 Prefiler Labs Private Limited. ReliaMesh core is licensed under Apache-2.0.</footer>
 </main></html>"""
 
