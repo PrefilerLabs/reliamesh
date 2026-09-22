@@ -1,0 +1,320 @@
+{
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "else": {
+        "properties": {
+          "failure_type": {
+            "type": "null"
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "failure"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "failure_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "failure_type"
+        ]
+      }
+    }
+  ],
+  "description": "One observed execution outcome; HTTP transport success is irrelevant.",
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "event_id": {
+      "maxLength": 36,
+      "minLength": 36,
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "title": "Event Id",
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "deployment_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+      "title": "Deployment Id",
+      "type": "string"
+    },
+    "agent_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+      "title": "Agent Id",
+      "type": "string"
+    },
+    "operation": {
+      "enum": [
+        "agent",
+        "model",
+        "tool",
+        "validation"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "outcome": {
+      "enum": [
+        "success",
+        "failure"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "failure_type": {
+      "anyOf": [
+        {
+          "enum": [
+            "agent_error",
+            "model_error",
+            "tool_error",
+            "malformed_output",
+            "validation_failure",
+            "timeout",
+            "retry_exhausted",
+            "retry_explosion",
+            "loop_detected",
+            "fallback_activated",
+            "task_incomplete",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Failure Type"
+    },
+    "latency_ms": {
+      "anyOf": [
+        {
+          "maximum": 86400000,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Latency Ms"
+    },
+    "input_tokens": {
+      "anyOf": [
+        {
+          "maximum": 1000000000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Input Tokens"
+    },
+    "output_tokens": {
+      "anyOf": [
+        {
+          "maximum": 1000000000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Output Tokens"
+    },
+    "retry_count": {
+      "anyOf": [
+        {
+          "maximum": 1000000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Retry Count"
+    },
+    "provider": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Provider"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model"
+    },
+    "model_version": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Version"
+    },
+    "framework": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Framework"
+    },
+    "framework_version": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Framework Version"
+    },
+    "sdk": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sdk"
+    },
+    "sdk_version": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Sdk Version"
+    },
+    "tool": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tool"
+    },
+    "tool_version": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Tool Version"
+    },
+    "prompt_version": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prompt Version"
+    },
+    "agent_version": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]{0,63}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Agent Version"
+    },
+    "synthetic": {
+      "default": false,
+      "title": "Synthetic",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "event_id",
+    "timestamp",
+    "deployment_id",
+    "agent_id",
+    "operation",
+    "outcome"
+  ],
+  "title": "Event",
+  "type": "object"
+}

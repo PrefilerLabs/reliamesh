@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reliamesh-server"
+version = "0.1.0"
+description = "Privacy-first reliability infrastructure for AI agents"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+authors = [{name = "Prefiler Labs Private Limited"}]
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic>=2.10,<3"]
+
+[project.optional-dependencies]
+gcp = ["google-cloud-firestore>=2.20,<3"]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11,<1", "pip-audit>=2.9,<3", "pip-licenses>=5,<6", "build>=1.2,<2"]
+
+[project.scripts]
+reliamesh = "reliamesh.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "sdk/python/src"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S"]
+ignore = ["E501", "S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S105", "S106", "S107", "S311"]
+"examples/**" = ["S311"]

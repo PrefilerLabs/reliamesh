@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reliamesh-sdk"
+version = "0.1.0"
+description = "Content-minimizing reliability events for AI agents"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{name = "Prefiler Labs Private Limited"}]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/PrefilerLabs/reliamesh"
+Repository = "https://github.com/PrefilerLabs/reliamesh"
+Issues = "https://github.com/PrefilerLabs/reliamesh/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
