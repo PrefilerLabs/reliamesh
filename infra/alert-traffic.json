@@ -1,0 +1,21 @@
+{
+  "displayName": "ReliaMesh unexpected sustained request volume",
+  "combiner": "OR",
+  "enabled": true,
+  "documentation": {
+    "content": "Sustained request rate above 2 requests/second for 5 minutes. Review project reliamesh usage for abuse or legitimate adoption. Application quotas do not cap billing. This is an early operations threshold, not a product reliability incident.",
+    "mimeType": "text/markdown"
+  },
+  "conditions": [{
+    "displayName": "Request volume exceeds early-operation threshold",
+    "conditionThreshold": {
+      "filter": "resource.type=\"cloud_run_revision\" AND resource.labels.service_name=\"reliamesh-api\" AND metric.type=\"run.googleapis.com/request_count\"",
+      "aggregations": [{"alignmentPeriod": "300s", "perSeriesAligner": "ALIGN_RATE", "crossSeriesReducer": "REDUCE_SUM"}],
+      "comparison": "COMPARISON_GT",
+      "thresholdValue": 2,
+      "duration": "300s",
+      "trigger": {"count": 1}
+    }
+  }],
+  "alertStrategy": {"autoClose": "3600s"}
+}

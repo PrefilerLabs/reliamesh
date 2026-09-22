@@ -10,6 +10,9 @@ Copyright 2026 **Prefiler Labs Private Limited**. [Apache-2.0](LICENSE).
 
 Canonical repository: [PrefilerLabs/reliamesh](https://github.com/PrefilerLabs/reliamesh).
 
+Managed endpoint: [api.reliamesh.com](https://api.reliamesh.com). Access is provisioned
+by the operator; self-hosting needs no managed account.
+
 ## What works in 0.1.0
 
 - A versioned, strict reliability-event contract and a Python SDK with no runtime
@@ -45,6 +48,18 @@ The server listens on `http://127.0.0.1:8080`. SQLite stores data at
 keep it private and outside version control. No cloud account is needed.
 The provisioning key has ingest/read/manage scopes; create a key limited to
 `ingest` for application deployments.
+
+Docker alternative:
+
+```sh
+docker compose up --build -d --wait
+docker compose exec api reliamesh tenant create example --output /data/example.json
+docker compose cp api:/data/example.json .local/example.json
+```
+
+Create `.local` before copying the credentials. The API binds only to loopback,
+uses a persistent volume and runs as an unprivileged user. Install the local SDK
+to run the example against this service. Back up the volume before upgrades.
 
 In a second terminal in the same environment:
 
@@ -113,6 +128,7 @@ and revoked keys before any production restore.
 ## Documentation and development
 
 - [Architecture and limits](docs/architecture.md)
+- [Managed deployment](docs/deployment.md), [operations](docs/operations.md), and [cost controls](docs/cost-controls.md)
 - [Protocol](docs/protocol.md) and [detection](docs/detection.md)
 - [Privacy](docs/privacy.md) and [threat model](docs/threat-model.md)
 - [Security reporting](SECURITY.md), [contributing](CONTRIBUTING.md), and [changelog](CHANGELOG.md)

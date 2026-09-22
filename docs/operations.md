@@ -88,5 +88,11 @@ Logging retention is seven days. Cloud Run platform request logs include network
 metadata and URLs, but not the telemetry body or Authorization header. Application
 access logging is disabled. Do not put private information in URLs or opaque IDs.
 
+Cloud Monitoring runs an external HTTPS availability check every five minutes.
+Policies cover multi-location availability failures, server errors and unexpected
+sustained request volume. Alerts are visible in the project's Monitoring console;
+outbound notification channels are not configured. Configure an approved operator
+notification destination before relying on unattended incident response.
+
 
 

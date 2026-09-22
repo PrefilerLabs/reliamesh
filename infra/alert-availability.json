@@ -1,0 +1,21 @@
+{
+  "displayName": "ReliaMesh API unavailable",
+  "combiner": "OR",
+  "enabled": true,
+  "documentation": {
+    "content": "At least two external probes report the API health endpoint unavailable. Check project reliamesh Cloud Run revision/ingress and roll back if needed. This availability check is distinct from agent reliability.",
+    "mimeType": "text/markdown"
+  },
+  "conditions": [{
+    "displayName": "Multiple locations cannot reach the API",
+    "conditionThreshold": {
+      "filter": "resource.type=\"uptime_url\" AND metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" AND metric.labels.check_id=\"reliamesh-api-availability-qbNxpSF1Wdw\"",
+      "aggregations": [{"alignmentPeriod": "300s", "perSeriesAligner": "ALIGN_NEXT_OLDER", "crossSeriesReducer": "REDUCE_COUNT_FALSE"}],
+      "comparison": "COMPARISON_GT",
+      "thresholdValue": 1,
+      "duration": "300s",
+      "trigger": {"count": 1}
+    }
+  }],
+  "alertStrategy": {"autoClose": "3600s"}
+}
