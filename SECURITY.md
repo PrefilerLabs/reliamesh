@@ -7,7 +7,7 @@ a security release is announced. There is no stated response-time SLA.
 Do not post credentials, customer data, exploit payloads containing real data, or
 unredacted operational logs in public issues. Use the repository's [private
 vulnerability reporting](https://github.com/PrefilerLabs/reliamesh/security/advisories/new)
-feature if enabled. If that channel is
+feature, which is enabled for the company repository. If that channel is
 unavailable, open an issue containing only a request for a private maintainer
 contact, without vulnerability details. A dedicated public security mailbox is
 not claimed until the owner has provisioned and verified one.

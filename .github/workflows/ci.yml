@@ -92,4 +92,4 @@ jobs:
         run: docker build --tag reliamesh:ci .
       - name: Verify runtime imports and non-root identity
         run: |
-          docker run --rm reliamesh:ci python -c "import os; import reliamesh.api; from reliamesh.storage import SQLiteStore; assert os.getuid() != 0; assert SQLiteStore(':memory:').health()"
+          docker run --rm reliamesh:ci python -c "import os,importlib.util; import reliamesh.api; from reliamesh.storage import SQLiteStore; assert os.getuid() != 0; assert SQLiteStore(':memory:').health(); assert all(importlib.util.find_spec(name) is None for name in ('pip','setuptools','wheel','ensurepip'))"

@@ -14,6 +14,10 @@ service account; no service account keys are needed or distributed.
 - Secret Manager `reliamesh-admin-hash`: SHA256 administrator key digest.
   The runtime may access only this secret. Plaintext administrative credentials
   are delivered separately, never in Git, images, logs, or documentation.
+- Secret Manager `reliamesh-operator-credentials`: encrypted operator recovery
+  copy of the administrator credential. Runtime and deployment service accounts
+  have no direct access to this secret. An authorized project operator can recover
+  it without relying on a developer workstation.
 - Authentication is enforced inside the API; Cloud Run's HTTP endpoint is public
   so SDKs can connect. No public signup. Operators provision tenants.
 
@@ -90,9 +94,10 @@ access logging is disabled. Do not put private information in URLs or opaque IDs
 
 Cloud Monitoring runs an external HTTPS availability check every five minutes.
 Policies cover multi-location availability failures, server errors and unexpected
-sustained request volume. Alerts are visible in the project's Monitoring console;
-outbound notification channels are not configured. Configure an approved operator
-notification destination before relying on unattended incident response.
+sustained request volume. Alerts are visible in the project's Monitoring console
+and routed to the owner-approved `founder@prefiler.com` email channel. Channel and
+policy configuration were read back after creation. Mailbox delivery has not been
+verified by an induced production outage.
 
 
 

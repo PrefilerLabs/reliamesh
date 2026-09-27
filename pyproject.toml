@@ -9,8 +9,15 @@ description = "Privacy-first reliability infrastructure for AI agents"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
 authors = [{name = "Prefiler Labs Private Limited"}]
 dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic>=2.10,<3"]
+
+[project.urls]
+Homepage = "https://reliamesh.com"
+Repository = "https://github.com/PrefilerLabs/reliamesh"
+Issues = "https://github.com/PrefilerLabs/reliamesh/issues"
+Documentation = "https://github.com/PrefilerLabs/reliamesh#readme"
 
 [project.optional-dependencies]
 gcp = ["google-cloud-firestore>=2.20,<3"]

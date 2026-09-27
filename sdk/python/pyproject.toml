@@ -17,6 +17,7 @@ dependencies = []
 Homepage = "https://github.com/PrefilerLabs/reliamesh"
 Repository = "https://github.com/PrefilerLabs/reliamesh"
 Issues = "https://github.com/PrefilerLabs/reliamesh/issues"
+Documentation = "https://github.com/PrefilerLabs/reliamesh/blob/main/sdk/python/README.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]

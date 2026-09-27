@@ -3,7 +3,13 @@
 Content-minimizing reliability events for AI agents. Python 3.12+, no runtime
 dependencies. Owned by Prefiler Labs Private Limited; Apache-2.0.
 
-Install from this source checkout:
+For a published release, install from PyPI:
+
+```sh
+python -m pip install reliamesh-sdk==0.1.0
+```
+
+Or install from this source checkout:
 
 ```sh
 python -m pip install ./sdk/python

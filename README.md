@@ -6,7 +6,7 @@ ReliaMesh ingests structured outcomes, detects reliability deterioration, and
 tracks recovery without collecting prompts, model responses, or tool content.
 An API returning HTTP 200 does not establish that an agent completed its task.
 
-Copyright 2026 **Prefiler Labs Private Limited**. [Apache-2.0](LICENSE).
+Copyright 2026 **Prefiler Labs Private Limited**. [Apache-2.0](https://github.com/PrefilerLabs/reliamesh/blob/main/LICENSE).
 
 Canonical repository: [PrefilerLabs/reliamesh](https://github.com/PrefilerLabs/reliamesh).
 
@@ -29,16 +29,27 @@ by the operator; self-hosting needs no managed account.
 This is an early release with bounded tenant-local analysis. It does not establish
 root cause, infer correctness from model text, or claim calibrated false-positive
 rates. Cross-organization network intelligence is disabled; there are no verified
-cohort or adoption claims. See [detection behavior](docs/detection.md) and
-[operating limits](docs/architecture.md).
+cohort or adoption claims. See [detection behavior](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/detection.md) and
+[operating limits](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/architecture.md).
 
 ## Run locally
 
 Python 3.12 or later is required. Create and activate a virtual environment using
-your platform's standard commands, then run from the source checkout:
+your platform's standard commands. For a published release, install from PyPI:
+
+```sh
+python -m pip install reliamesh-server==0.1.0 reliamesh-sdk==0.1.0
+```
+
+For development, install from the source checkout instead:
 
 ```sh
 python -m pip install -e . -e ./sdk/python
+```
+
+Then provision a local tenant and start the service:
+
+```sh
 reliamesh tenant create example --output .local/example.json
 reliamesh serve
 ```
@@ -61,7 +72,8 @@ Create `.local` before copying the credentials. The API binds only to loopback,
 uses a persistent volume and runs as an unprivileged user. Install the local SDK
 to run the example against this service. Back up the volume before upgrades.
 
-In a second terminal in the same environment:
+In a second terminal in the same environment, run the example from a source
+checkout or the server source archive:
 
 ```sh
 python examples/synthetic_regression.py --endpoint http://127.0.0.1:8080 --credentials .local/example.json
@@ -96,7 +108,7 @@ client.flush()
 run it on a worker in async or latency-sensitive applications. Watch
 `client.counters` for drops. The SDK never chooses a cloud endpoint or exports
 silently. Use opaque identifiers; schema validation cannot detect secrets hidden
-inside otherwise valid labels. [SDK usage and delivery contract](sdk/python/README.md).
+inside otherwise valid labels. [SDK usage and delivery contract](https://github.com/PrefilerLabs/reliamesh/blob/main/sdk/python/README.md).
 
 ## Inspect and operate
 
@@ -116,7 +128,7 @@ For SQLite, run `reliamesh purge` on a schedule to physically remove expired ope
 Reads suppress expired observations after seven days. Active tenant credentials
 persist until revoked or deleted. Backups require a separate operator retention
 policy. Firestore requires its TTL policy for unattended physical cleanup;
-see [storage operations](docs/storage.md) and [privacy and retention](docs/privacy.md).
+see [storage operations](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/storage.md) and [privacy and retention](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/privacy.md).
 
 `reliamesh backup --output .local/backup.db` uses SQLite's consistent backup API
 and refuses to overwrite an existing file. Backups contain private tenant data
@@ -127,11 +139,11 @@ and revoked keys before any production restore.
 
 ## Documentation and development
 
-- [Architecture and limits](docs/architecture.md)
-- [Managed deployment](docs/deployment.md), [operations](docs/operations.md), and [cost controls](docs/cost-controls.md)
-- [Protocol](docs/protocol.md) and [detection](docs/detection.md)
-- [Privacy](docs/privacy.md) and [threat model](docs/threat-model.md)
-- [Security reporting](SECURITY.md), [contributing](CONTRIBUTING.md), and [changelog](CHANGELOG.md)
+- [Architecture and limits](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/architecture.md)
+- [Managed deployment](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/deployment.md), [operations](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/operations.md), and [cost controls](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/cost-controls.md)
+- [Protocol](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/protocol.md) and [detection](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/detection.md)
+- [Privacy](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/privacy.md) and [threat model](https://github.com/PrefilerLabs/reliamesh/blob/main/docs/threat-model.md)
+- [Security reporting](https://github.com/PrefilerLabs/reliamesh/blob/main/SECURITY.md), [contributing](https://github.com/PrefilerLabs/reliamesh/blob/main/CONTRIBUTING.md), and [changelog](https://github.com/PrefilerLabs/reliamesh/blob/main/CHANGELOG.md)
 
 ```sh
 python -m pip install -e ".[dev]" -e ./sdk/python
@@ -141,5 +153,4 @@ python -m ruff check .
 
 No payments, blockchain, generative-model dependency, or proprietary hosted
 dependency is required for the core reliability path.
-
 

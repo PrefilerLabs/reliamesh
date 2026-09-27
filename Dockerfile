@@ -5,7 +5,12 @@ COPY requirements.lock /app/
 RUN pip install --require-hashes -r requirements.lock
 COPY pyproject.toml README.md LICENSE NOTICE /app/
 COPY src /app/src
-RUN pip install --no-deps . && useradd --uid 10001 --create-home reliamesh && mkdir /data && chown reliamesh:reliamesh /data
+RUN pip install --no-deps . \
+    && python -m pip uninstall --yes pip setuptools wheel \
+    && python -c "import pathlib, shutil, sysconfig; shutil.rmtree(pathlib.Path(sysconfig.get_path('stdlib')) / 'ensurepip')" \
+    && useradd --uid 10001 --create-home reliamesh \
+    && mkdir /data && chown reliamesh:reliamesh /data \
+    && find / -xdev -type f -perm /6000 -exec chmod a-s '{}' +
 USER 10001:10001
 ENV RM_SQLITE_PATH=/data/reliamesh.db
 EXPOSE 8080
