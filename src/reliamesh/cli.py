@@ -23,6 +23,8 @@ def write_private(path, data):
     with os.fdopen(fd, "w", encoding="utf-8") as handle:
         json.dump(data, handle, indent=2)
         handle.write("\n")
+        handle.flush()
+        os.fsync(handle.fileno())
 
 
 def backup_sqlite(source_path, output_path):

@@ -1,6 +1,6 @@
 # Releases
 
-The server and zero-dependency Python SDK currently share version 0.1.0. Event
+The server and zero-dependency Python SDK currently share version 0.2.0. Event
 schema 1.0 and HTTP `/v1` are versioned separately. A package version must never be
 reused with different contents after publication.
 

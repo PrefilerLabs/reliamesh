@@ -1,0 +1,68 @@
+{
+  "verified_at": "2026-09-30T13:38:21.516739+00:00",
+  "endpoint": "https://api.reliamesh.com",
+  "server_health": {
+    "status": "ok",
+    "version": "0.1.0"
+  },
+  "synthetic": true,
+  "scenario": "Solana RPC readiness fixtures; no real RPC outage",
+  "checks": 200,
+  "ready": 150,
+  "deferred": 50,
+  "evidence": {
+    "accepted": 200,
+    "duplicates": 0,
+    "sent": 200,
+    "dropped": 0,
+    "queued": 0,
+    "incident_opened": true,
+    "incident_recovered": true
+  },
+  "reports": {
+    "regression": {
+      "commitment_sha256": "d15649d438b863606f4b77fb490573136fc5492fe9603db97e572385aa26e10e",
+      "report": {
+        "schema_version": "reliamesh-window-report/v1",
+        "telemetry_schema": "1.0",
+        "server_version": "0.1.0",
+        "generated_at": "2026-09-30T13:38:21.516739Z",
+        "synthetic": true,
+        "stream_count": 1,
+        "baseline_samples": 50,
+        "baseline_failures": 0,
+        "current_samples": 50,
+        "current_failures": 50,
+        "open_incidents": 1,
+        "resolved_incidents": 0,
+        "expired_incidents": 0
+      }
+    },
+    "recovery": {
+      "commitment_sha256": "512ecf91d5266a360cfdf4b6107275f1c17beef7debc2da32075c87acb31b7ef",
+      "report": {
+        "schema_version": "reliamesh-window-report/v1",
+        "telemetry_schema": "1.0",
+        "server_version": "0.1.0",
+        "generated_at": "2026-09-30T13:38:21.516739Z",
+        "synthetic": true,
+        "stream_count": 1,
+        "baseline_samples": 50,
+        "baseline_failures": 0,
+        "current_samples": 50,
+        "current_failures": 0,
+        "open_incidents": 0,
+        "resolved_incidents": 1,
+        "expired_incidents": 0
+      }
+    }
+  },
+  "live_rpc_readiness": {
+    "decision": "continue_planning",
+    "outcome": "success",
+    "failure_type": null,
+    "reason": "readiness_checks_passed",
+    "synthetic": false
+  },
+  "disposable_tenant_deleted": true
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "reliamesh-devnet-commitment/v1",
+  "network": "solana-devnet",
+  "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "expected_signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+  "salt_hex": "854b6ef651d834da8e14f571d349ab534e3ac9a20e804163f1ffeb67c445c73e",
+  "report": {
+    "schema_version": "reliamesh-window-report/v1",
+    "telemetry_schema": "1.0",
+    "server_version": "0.1.0",
+    "generated_at": "2026-09-30T13:38:21.516739Z",
+    "synthetic": true,
+    "stream_count": 1,
+    "baseline_samples": 50,
+    "baseline_failures": 0,
+    "current_samples": 50,
+    "current_failures": 0,
+    "open_incidents": 0,
+    "resolved_incidents": 1,
+    "expired_incidents": 0
+  }
+}

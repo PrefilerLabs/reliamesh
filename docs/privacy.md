@@ -69,12 +69,19 @@ SQLite self-hosting has no outbound telemetry. The SDK has no default cloud
 endpoint. Firestore deployments use the explicitly configured Google Cloud storage
 service and its normal service APIs; this is not global-network contribution.
 
-Cross-organization network intelligence is disabled in 0.1.0. There is no automatic
+Cross-organization network intelligence remains disabled in 0.2.0. There is no automatic
 participation switch that quietly uploads self-hosted data. A future contribution
 feature requires an explicit configuration contract, independently verified
 cohorts, suppression thresholds, a documented retention policy, and privacy
 review. Aggregation and cohort thresholds alone do not provide differential
 privacy or eliminate reidentification risk.
+
+The optional operator-only Devnet attestation CLI is a separate, explicit outbound
+action. It publishes a salted report commitment, payer public key, and ledger
+metadata; the report and salt remain off-chain until voluntarily disclosed.
+On-chain records are not erased by tenant deletion. The API does not automatically
+produce or publish attestations and holds no signing key. Read the
+[attestation privacy and trust model](solana-attestation.md) before using it.
 
 Schema changes that add data collection require a protocol version decision and
 privacy review before release. This document describes technical handling; it is

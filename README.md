@@ -10,10 +10,13 @@ Copyright 2026 **Prefiler Labs Private Limited**. [Apache-2.0](https://github.co
 
 Canonical repository: [PrefilerLabs/reliamesh](https://github.com/PrefilerLabs/reliamesh).
 
+[Technical dossier and verification](docs/grant-readiness.md) ·
+[Solana evidence and current limits](docs/evidence/solana-devnet/README.md)
+
 Managed endpoint: [api.reliamesh.com](https://api.reliamesh.com). Access is provisioned
 by the operator; self-hosting needs no managed account.
 
-## What works in 0.1.0
+## What works in 0.2.0
 
 - A versioned, strict reliability-event contract and a Python SDK with no runtime
   dependencies. Explicit outcomes, failure taxonomy, counters, elapsed time,
@@ -25,6 +28,10 @@ by the operator; self-hosting needs no managed account.
   failure fingerprints, and incident opening/recovery.
 - SQLite self-hosting and a Firestore storage adapter for Cloud Run. No outbound
   telemetry from a SQLite self-hosted service.
+- An optional, operator-triggered Solana Devnet report commitment and verifier,
+  plus a read-only Solana RPC agent example. The API and SDK do not require a
+  blockchain connection. [Attestation specification](docs/solana-attestation.md)
+  and [agent example](docs/solana-agent-example.md).
 
 This is an early release with bounded tenant-local analysis. It does not establish
 root cause, infer correctness from model text, or claim calibrated false-positive
@@ -38,7 +45,7 @@ Python 3.12 or later is required. Create and activate a virtual environment usin
 your platform's standard commands. For a published release, install from PyPI:
 
 ```sh
-python -m pip install reliamesh-server==0.1.0 reliamesh-sdk==0.1.0
+python -m pip install reliamesh-server==0.2.0 reliamesh-sdk==0.2.0
 ```
 
 For development, install from the source checkout instead:
@@ -153,4 +160,3 @@ python -m ruff check .
 
 No payments, blockchain, generative-model dependency, or proprietary hosted
 dependency is required for the core reliability path.
-

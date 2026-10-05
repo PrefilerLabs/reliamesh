@@ -1,6 +1,6 @@
 # Architecture
 
-ReliaMesh 0.1.0 is one Python service, one deterministic analysis engine, and a
+ReliaMesh 0.2.0 is one Python service, one deterministic analysis engine, and a
 standard-library Python SDK. Prefiler Labs Private Limited owns the project;
 the core is Apache-2.0.
 
@@ -77,5 +77,7 @@ real network intelligence. Synthetic evidence cannot establish that network.
 
 Managed deployment uses only Google Cloud project `reliamesh`. Cloud Run, Firestore,
 and project-scoped service identities are deployment concerns, not SDK dependencies.
-No blockchain, payment system, cross-project infrastructure, or external paid
-service is part of this release.
+The optional operator-only [Solana Devnet attestation adapter](solana-attestation.md)
+publishes explicit report commitments separately from the core. The API has no
+wallet or blockchain dependency. No payment system, cross-project infrastructure,
+or external paid service is part of this release.

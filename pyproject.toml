@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "reliamesh-server"
-version = "0.1.0"
+version = "0.2.0"
 description = "Privacy-first reliability infrastructure for AI agents"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -21,10 +21,12 @@ Documentation = "https://github.com/PrefilerLabs/reliamesh#readme"
 
 [project.optional-dependencies]
 gcp = ["google-cloud-firestore>=2.20,<3"]
+attest = ["cryptography>=50.0.1,<51"]
 dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11,<1", "pip-audit>=2.9,<3", "pip-licenses>=5,<6", "build>=1.2,<2"]
 
 [project.scripts]
 reliamesh = "reliamesh.cli:main"
+reliamesh-attest = "reliamesh.attest_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

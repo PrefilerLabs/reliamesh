@@ -1,0 +1,46 @@
+{
+  "schema_version": "reliamesh-wire-interop-proof/v1",
+  "generated_at": "2026-09-30T13:40:08.973Z",
+  "synthetic": true,
+  "disposable_key": true,
+  "private_key_persisted": false,
+  "rpc_used": false,
+  "transaction_submitted": false,
+  "sdk": {
+    "name": "@solana/web3.js",
+    "version": "1.98.4",
+    "integrity": "sha512-vv9lfnvjUsRiq//+j5pBdXig0IQdtzA0BRZ3bXEP4KaIyF1CcaydWqgyzQgfZMNIsWNWmG+AUHwPy4AHOD6gpw==",
+    "source": "https://registry.npmjs.org/@solana/web3.js/-/web3.js-1.98.4.tgz"
+  },
+  "sdk_reference": "https://solana-foundation.github.io/solana-web3.js/v1.x/classes/Transaction.html",
+  "runtime": {
+    "node": "v24.8.0"
+  },
+  "public_fixture": {
+    "synthetic": true,
+    "disposable_key": true,
+    "commitment_sha256": "8d67e41833ebf96c2421e74d6fc3a04ec8b567cc6f844ec377441e8b9a6276cf",
+    "recent_blockhash": "11111111111111111111111111111111",
+    "public_key": "2NxuzBnj9EMBPk1XeoCaxhX1NzZMHFnT1pjZkd4GHeFZ",
+    "signature": "2ZNauP75A6w8CFyiotJ6KRzz76iEc433RKqyq7YNK1R4nFFS5buiakUzNgBakqQSnYMQyZKRECBs2cNKJ9BcqfQ4",
+    "transaction_base64": "AU3u+nc2hEkjJpAF08UJQs8zTWF3BAIFVl7CmAX/yi1ATVq9rvvlV5YIQYzbwvaZEa0J4KrM9wJtngMUAFzbrgEBAAECFHwbBq84Xb3NjmCh7j4K2UXkaCxhMxQ3GGJgt4xO1VAFSlNamSkhBk0k6HFg2jh8fDW13bySu4HkH6hAQQVEjQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAFtyZWxpYW1lc2g6YXR0ZXN0OnYxOnNoYTI1Njo4ZDY3ZTQxODMzZWJmOTZjMjQyMWU3NGQ2ZmMzYTA0ZWM4YjU2N2NjNmY4NDRlYzM3NzQ0MWU4YjlhNjI3NmNm"
+  },
+  "transaction_bytes": 261,
+  "transaction_sha256": "5de5e0c38fcf9810e0d44f66b5e9201d225d604584a2e75f79e2e2c045be702e",
+  "checks": {
+    "standard_sdk_deserialization": true,
+    "ed25519_signature_valid": true,
+    "one_signature_and_expected_payer": true,
+    "signature_identifier_matches": true,
+    "header_1_0_1_and_two_accounts": true,
+    "one_memo_instruction_and_signed_payer_account": true,
+    "exact_ascii_commitment": true,
+    "no_additional_instructions": true,
+    "sdk_roundtrip_byte_identical": true,
+    "independent_sdk_message_byte_identical": true,
+    "independent_sdk_transaction_byte_identical": true,
+    "mutated_signature_rejected": true,
+    "mutated_memo_rejected": true
+  },
+  "limitations": "Offline wire interoperability only; no RPC, ledger inclusion, report-truth, or finality claim."
+}

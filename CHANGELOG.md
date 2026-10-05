@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0
+
+- Optional Devnet-only signed Memo commitments to salted, count-only reliability
+  reports, with strict schemas, canonical hashing and a finalized-transaction
+  verifier. No automatic publication or change to the tenant ingestion path.
+- Explicit operator CLI with dedicated Devnet keys, bounded fees and transport,
+  pending-signature recovery, and trusted-signer verification.
+- Runnable Solana RPC agent integration with labeled synthetic failure/recovery
+  fixtures; SDK runtime dependencies remain empty and event schema remains 1.0.
+- Grant-readiness evidence, public Devnet references, privacy/threat-model notes,
+  and reproducible commands. Synthetic tests do not establish independent demand.
+
 ## 0.1.0
 
 Initial release implementation:

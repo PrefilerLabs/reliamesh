@@ -151,7 +151,7 @@ def main(argv=None):
     parser.add_argument("--root", action="append", help="installed distribution requirement")
     parser.add_argument("--json-output", type=Path)
     arguments = parser.parse_args(argv)
-    roots = arguments.root or ["reliamesh-server[gcp]", "reliamesh-sdk"]
+    roots = arguments.root or ["reliamesh-server[gcp,attest]", "reliamesh-sdk"]
     try:
         report = inventory(roots)
     except PolicyError as error:

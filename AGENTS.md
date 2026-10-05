@@ -11,7 +11,10 @@ Prefiler Labs Private Limited. Apache-2.0 is the approved core license.
 - Self-hosting has no outbound telemetry. Network participation requires explicit
   configuration and independently verified cohorts; synthetic evidence is labeled.
 - Build/test/verify before claiming completion. Document limitations honestly.
-- No blockchain, billing product, paid external services, or fabricated adoption.
+- The owner authorized an optional Solana Devnet attestation adapter after the
+  0.1.0 core release. Keep the core chain-independent; publish only explicit
+  content-minimizing commitments. No token, mainnet spending, billing product,
+  paid external service, or fabricated adoption is authorized.
 - Secrets and operational credentials belong outside Git and public artifacts.
 - Keep implementations portable, bounded, deterministic, and simple.
 

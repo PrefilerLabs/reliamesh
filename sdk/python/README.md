@@ -6,7 +6,7 @@ dependencies. Owned by Prefiler Labs Private Limited; Apache-2.0.
 For a published release, install from PyPI:
 
 ```sh
-python -m pip install reliamesh-sdk==0.1.0
+python -m pip install reliamesh-sdk==0.2.0
 ```
 
 Or install from this source checkout:

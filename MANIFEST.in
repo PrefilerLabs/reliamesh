@@ -2,12 +2,12 @@
 include LICENSE NOTICE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md
 include AGENTS.md requirements.lock Dockerfile compose.yaml
 include .dockerignore .gitignore
-recursive-include docs *.md
+recursive-include docs *.md *.json *.svg
 recursive-include tests *.py
 recursive-include schemas *.json
 include scripts/check_licenses.py scripts/verify_deployment.py
 include infra/bootstrap.ps1 infra/deploy.ps1 infra/registry-cleanup.json
-include examples/synthetic_regression.py
+include examples/synthetic_regression.py examples/solana_rpc_agent.py
 include sdk/python/pyproject.toml sdk/python/README.md sdk/python/LICENSE sdk/python/NOTICE
 recursive-include sdk/python/src/reliamesh_sdk *.py
 

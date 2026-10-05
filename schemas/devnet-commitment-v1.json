@@ -1,0 +1,139 @@
+{
+  "$defs": {
+    "WindowReport": {
+      "additionalProperties": false,
+      "description": "Counts of retained sample windows, never lifetime or customer content.",
+      "properties": {
+        "schema_version": {
+          "const": "reliamesh-window-report/v1",
+          "default": "reliamesh-window-report/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "telemetry_schema": {
+          "const": "1.0",
+          "default": "1.0",
+          "title": "Telemetry Schema",
+          "type": "string"
+        },
+        "server_version": {
+          "pattern": "^[0-9]{1,4}\\.[0-9]{1,4}\\.[0-9]{1,4}$",
+          "title": "Server Version",
+          "type": "string"
+        },
+        "generated_at": {
+          "title": "Generated At",
+          "type": "string"
+        },
+        "synthetic": {
+          "title": "Synthetic",
+          "type": "boolean"
+        },
+        "stream_count": {
+          "maximum": 16,
+          "minimum": 0,
+          "title": "Stream Count",
+          "type": "integer"
+        },
+        "baseline_samples": {
+          "maximum": 800,
+          "minimum": 0,
+          "title": "Baseline Samples",
+          "type": "integer"
+        },
+        "baseline_failures": {
+          "maximum": 800,
+          "minimum": 0,
+          "title": "Baseline Failures",
+          "type": "integer"
+        },
+        "current_samples": {
+          "maximum": 800,
+          "minimum": 0,
+          "title": "Current Samples",
+          "type": "integer"
+        },
+        "current_failures": {
+          "maximum": 800,
+          "minimum": 0,
+          "title": "Current Failures",
+          "type": "integer"
+        },
+        "open_incidents": {
+          "maximum": 32,
+          "minimum": 0,
+          "title": "Open Incidents",
+          "type": "integer"
+        },
+        "resolved_incidents": {
+          "maximum": 32,
+          "minimum": 0,
+          "title": "Resolved Incidents",
+          "type": "integer"
+        },
+        "expired_incidents": {
+          "maximum": 32,
+          "minimum": 0,
+          "title": "Expired Incidents",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "server_version",
+        "generated_at",
+        "synthetic",
+        "stream_count",
+        "baseline_samples",
+        "baseline_failures",
+        "current_samples",
+        "current_failures",
+        "open_incidents",
+        "resolved_incidents",
+        "expired_incidents"
+      ],
+      "title": "WindowReport",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "reliamesh-devnet-commitment/v1",
+      "default": "reliamesh-devnet-commitment/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "network": {
+      "const": "solana-devnet",
+      "default": "solana-devnet",
+      "title": "Network",
+      "type": "string"
+    },
+    "genesis_hash": {
+      "const": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "default": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "title": "Genesis Hash",
+      "type": "string"
+    },
+    "expected_signer": {
+      "pattern": "^[1-9A-HJ-NP-Za-km-z]{32,44}$",
+      "title": "Expected Signer",
+      "type": "string"
+    },
+    "salt_hex": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Salt Hex",
+      "type": "string"
+    },
+    "report": {
+      "$ref": "#/$defs/WindowReport"
+    }
+  },
+  "required": [
+    "expected_signer",
+    "salt_hex",
+    "report"
+  ],
+  "title": "CommitmentBundle",
+  "type": "object"
+}

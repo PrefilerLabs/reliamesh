@@ -331,8 +331,15 @@ rejects prompts, responses, tool arguments, arbitrary attributes, and exception 
 <a href="https://github.com/PrefilerLabs/reliamesh/tree/main/sdk/python">Python SDK</a> ·
 <a href="/openapi.json">API contract</a> · <a href="/health">Service health</a></p>
 <h2>Early release. Evidence first.</h2><p>Managed access is provisioned by the operator.
-ReliaMesh 0.1.0 supports tenant-local detection. Cross-organization network intelligence
+ReliaMesh 0.2.0 supports tenant-local detection. Cross-organization network intelligence
 is disabled until independent, verified contributor cohorts exist.</p>
+<h2>Verifiable reports for Solana developers.</h2>
+<p>An optional Devnet adapter records signed commitments to explicitly selected,
+count-only reliability reports. Verify the report hash and publisher independently;
+the ledger does not establish whether the underlying telemetry is truthful.</p>
+<p><a href="https://github.com/PrefilerLabs/reliamesh/blob/main/docs/solana-attestation.md">Devnet verifier &amp; evidence</a> ·
+<a href="https://github.com/PrefilerLabs/reliamesh/blob/main/docs/solana-agent-example.md">Run the Solana agent example</a> ·
+<a href="https://github.com/PrefilerLabs/reliamesh/releases">Releases</a></p>
 <footer>© 2026 Prefiler Labs Private Limited. ReliaMesh core is licensed under Apache-2.0.</footer>
 </main></html>"""
 
