@@ -3,10 +3,11 @@
 Owner: **Prefiler Labs Private Limited**. Public contact: **founder@prefiler.com**.
 Evidence is dated; synthetic exercises are not customer adoption or an SLA.
 
-**Readiness boundary:** the working core and optional Solana code have reproducible
-technical evidence. Finalized Devnet ledger evidence remains pending free faucet
-funding and its human verification. No on-chain ReliaMesh transaction, custom program
-deployment or completed Solana grant readiness is claimed before that succeeds.
+**Technical readiness:** version 0.2.0 is published and deployed, and two synthetic
+reliability-report commitments are finalized on Solana Devnet. The code, installable
+packages, production checks and reproducible ledger evidence are ready for a
+technical grant application. This does not establish grant eligibility, independent
+adoption, audited telemetry or mainnet readiness.
 
 ## Product and public entry points
 
@@ -24,8 +25,8 @@ task success from HTTP status or inspect prompts, model outputs or tool content.
 | Company repository | https://github.com/PrefilerLabs/reliamesh |
 | 0.2.0 release and final verification assets | https://github.com/PrefilerLabs/reliamesh/releases/tag/v0.2.0 |
 | Released baseline | https://github.com/PrefilerLabs/reliamesh/releases/tag/v0.1.0 |
-| SDK package | https://pypi.org/project/reliamesh-sdk/ |
-| Server package | https://pypi.org/project/reliamesh-server/ |
+| SDK package | https://pypi.org/project/reliamesh-sdk/0.2.0/ |
+| Server package | https://pypi.org/project/reliamesh-server/0.2.0/ |
 | Solana agent example | [Runnable read-only integration](solana-agent-example.md) |
 | Devnet specification and proof | [Commitment/verifier](solana-attestation.md) · [exact evidence](evidence/solana-devnet/README.md) |
 
@@ -66,8 +67,22 @@ needed. Core detection and ingestion continue without Solana.
 
 This uses the **existing Memo program**, not a custom deployed contract or program-owned
 report account. It is an early public-good integration, not proof of a decentralized
-reliability network. Exact account, program, transaction, fee, slot and Explorer links
-belong in the linked Devnet evidence record, with a reproducible verification command.
+reliability network. The dedicated signer is
+`CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5`; the program is
+`MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr`. Both transactions use genesis
+`EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG` and publish only the signed
+commitment memo. The off-chain bundles intentionally disclose synthetic counts and
+random salts; no customer content was published.
+
+| Finalized report | Devnet transaction | Slot | Fee |
+|---|---|---:|---:|
+| Regression | [4PEYeeFi…BUzf4Khz](https://explorer.solana.com/tx/4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz?cluster=devnet) | 508201584 | 5,000 lamports |
+| Recovery | [48n9Bfqu…3gLYobxA](https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet) | 508201716 | 5,000 lamports |
+
+The [exact evidence record](evidence/solana-devnet/README.md) contains complete
+signatures, block times, report bundles, commitments, receipts and verification
+commands. The official free faucet supplied 0.5 Devnet SOL; the two commitments
+consumed 0.00001 test SOL in total. No real SOL was purchased or spent.
 
 ## Privacy and security
 
@@ -86,7 +101,7 @@ uses asynchronous Firestore TTL for inactive state after seven days plus five mi
 Tenant deletion removes active state and keys;
 PITR, backups and platform logs have separate retention. Managed logs retain seven days
 and can include IP/path/timing metadata. TLS minimum is 1.2. The runtime is non-root,
-has no package installer, and uses project-scoped service accounts and secret references.
+has no Python package installer, and uses project-scoped service accounts and secret references.
 
 The on-chain memo reveals a commitment, payer and timing. Salt limits guessing before
 disclosure; publishing the bundle reveals the selected counts. The ledger cannot erase
@@ -99,7 +114,12 @@ is not a consensus light client. Devnet may reset or prune history.
 Only GCP project **`reliamesh`** is used. Cloud Run in **asia-south1** runs the API with
 Firestore Standard Native storage, seven-day PITR and deletion protection. HTTPS serves
 `reliamesh.com`, `www.reliamesh.com` and `api.reliamesh.com` through a global load balancer.
-The certificate was ACTIVE for all three on 29 September 2026. Monitoring covers API
+All three returned version **0.2.0** on 6 October 2026, with hostname-verified TLS 1.3
+and a certificate expiring 21 December 2026. Cloud Run revision
+`reliamesh-api-00005-mkb` receives 100% of service traffic. The deployed image is
+`asia-south1-docker.pkg.dev/reliamesh/reliamesh/api@sha256:43e253084e69fb21882c691d5e8ef77b1f5018b1f33335948cde068326c753d8`,
+built from release commit `158dfd825130a2f95926a6844049dbdf4e2a84ba`.
+Monitoring covers API
 availability, server errors and unusual request volume, routed to founder@prefiler.com;
 email delivery has not been validated through an induced outage.
 
@@ -137,15 +157,32 @@ not available within project-only authorization. A two-instance cap is not a spe
 
 ## Verification and demonstrations
 
-The 0.2.0 implementation passed **391 tests with one optional emulator test skipped**
-on 2 October, followed by **17 passing CLI tests** after adding the read-only pending
-status command. The release's attached verification record supplies the final exact
-commit CI, deployment and package evidence. Offline interoperability against the
+The final 0.2.0 commit passed **392 tests with one optional emulator test skipped**
+on each of Python 3.12 and 3.13; deployment independently reran the same suite.
+The runtime inventory covers 34 packages, including two first-party packages,
+with no license-policy errors. Public checks cover lint, locked dependency
+vulnerabilities, Git-history secrets and container execution.
+[Exact-commit CI](https://github.com/PrefilerLabs/reliamesh/actions/runs/37320057826),
+[deployment](https://github.com/PrefilerLabs/reliamesh/actions/runs/37320895699),
+[Trusted Publishing](https://github.com/PrefilerLabs/reliamesh/actions/runs/37320914593).
+The release's attached verification record supplies deployment and package evidence.
+All four 0.2.0 distributions match PyPI SHA-256 hashes, and their PyPI attestations
+verify the company repository, exact release commit, tag, workflow and expected
+publishing environments. A clean Python 3.12 install accepted 200 synthetic events,
+detected and resolved a regression, dropped zero events, and restored an identical
+SQLite summary from backup. The published optional attestation CLI passed report,
+key-generation, commitment preparation and offline signature checks; altered
+signatures, commitments and signers were rejected. The default install has no
+cryptography dependency.
+Offline interoperability against the
 official Solana JavaScript SDK passed 13 checks, including independent construction
 of byte-identical transaction messages and rejection of signature/memo mutations.
-The actual deployed synthetic Solana-tool exercise accepted 200 observations,
-opened and recovered the same incident, and dropped zero SDK events. See the
-[dated execution record](evidence/solana-devnet/execution.json).
+The 6 October deployed 0.2.0 synthetic Solana-tool exercise accepted 200 observations,
+opened and recovered the same incident, and dropped zero SDK events; a separate
+live read-only Devnet readiness check passed. Both this execution record and the
+earlier 0.1.0 exercise are preserved in the [Solana evidence](evidence/solana-devnet/README.md).
+A separate 201-event production check passed deduplication, privacy rejection,
+tenant isolation, key scopes/revocation, storage readiness and test-tenant cleanup.
 
 The 0.1.0 baseline passed **190 tests, with one optional emulator test skipped**;
 separate deployed Firestore verification passed. Public CI tested Python 3.12/3.13,
@@ -171,11 +208,14 @@ python examples/synthetic_regression.py --endpoint http://127.0.0.1:8080 --crede
 python examples/solana_rpc_agent.py --fixture
 ```
 
-The linked Solana example and evidence provide live-read commands and the exact
-pending ledger-proof boundary. Use the example output, repository architecture
-diagram and website as application/demo evidence. Add a public Explorer transaction
-only after a real finalized proof exists. Clearly label synthetic scenes
-and disclose the released 0.1.0 baseline when describing later work.
+The [release assets](https://github.com/PrefilerLabs/reliamesh/releases/tag/v0.2.0)
+include machine-readable verification, this dossier, a website screenshot and the
+Devnet evidence bundle. The linked Solana example and evidence provide live-read
+and ledger-verification commands. Use the example output, repository architecture
+diagram, website and finalized Explorer references as application/demo evidence.
+Clearly label synthetic scenes and disclose the released 0.1.0 baseline when
+describing later work. The immutable 0.2.0 source tag precedes final ledger
+publication; this dated evidence supplement records the subsequent verification.
 
 ## Honest limitations and reusable wording
 
@@ -186,13 +226,14 @@ onboarding, and no dashboard or billing product. Devnet anchoring alone is a mod
 Solana-specific contribution; useful integrations and actual developer feedback are
 needed to support a stronger ecosystem-benefit claim.
 
-The hardened 0.2.0 candidate scan (5 October 2026) had zero critical, zero fixable
+The exact deployed 0.2.0 image scan (6 October 2026 UTC) had zero critical, zero fixable
 HIGH/CRITICAL and zero Python HIGH/CRITICAL findings. It fixes newly reported OpenSSL
 and PCRE2 issues. **44 HIGH OS-package records across eight distinct CVEs with no
 advertised fixes** remain. Reachability analysis and mitigations are documented
 in [container security](container-security.md); this is not a clean-bill-of-health
-claim. The exact deployed image requires its own verification, recorded with the
-release. Managed-service customer legal notices,
+claim. The same image passed non-root API ingestion, deduplication and summary
+checks with networking disabled, no Python package installer and no set-ID files.
+Full image and scanner evidence is recorded with the release. Managed-service customer legal notices,
 founder/residency/prior-funding facts, budgets and application eligibility remain owner
 business responsibilities, separate from technical execution.
 

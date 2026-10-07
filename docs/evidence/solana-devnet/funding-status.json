@@ -1,0 +1,129 @@
+{
+  "schema_version": "reliamesh-devnet-funding-status/v1",
+  "evidence_as_of_date_utc": "2026-10-07",
+  "status": "funded_commitments_finalized",
+  "cluster": "solana-devnet",
+  "rpc_endpoint": "https://api.devnet.solana.com",
+  "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "public_key": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+  "official_cli": {
+    "name": "solana-cli",
+    "version": "4.3.0",
+    "implementation": "Anza Agave",
+    "execution_environment": "isolated Docker container",
+    "release_url": "https://github.com/anza-xyz/agave/releases/tag/v4.3.0",
+    "release_archive": "solana-release-x86_64-unknown-linux-gnu.tar.bz2",
+    "release_archive_sha256": "c97289a8abb1d0efb497d8b5cb285baabd9b7f8ea6647f5d145c5dc8ff3611e8",
+    "vendor_digest_verified": true,
+    "private_key_accessed_for_checks": false
+  },
+  "attempts": [
+    {
+      "run_started_at": "2026-10-05T13:53:48.750865+00:00",
+      "genesis_verified": true,
+      "cli_invocations": 1,
+      "requested_lamports": 10000000,
+      "exit_code": 1,
+      "cli_message": "airdrop request failed. This can happen when the rate limit is reached.",
+      "http_429_observed": false,
+      "retry_after_seconds_observed": null,
+      "automatic_http_429_retry_observed": false,
+      "balance_commitment": "finalized",
+      "balance_before_lamports": 0,
+      "balance_after_lamports": 0
+    },
+    {
+      "run_started_at": "2026-10-06T06:10:15.905524+00:00",
+      "genesis_verified": true,
+      "cli_invocations": 1,
+      "requested_lamports": 10000000,
+      "exit_code": 1,
+      "cli_message": "airdrop request failed. This can happen when the rate limit is reached.",
+      "http_429_observed": false,
+      "retry_after_seconds_observed": null,
+      "automatic_http_429_retry_observed": false,
+      "balance_commitment": "finalized",
+      "balance_before_lamports": 0,
+      "balance_after_lamports": 0
+    }
+  ],
+  "failure_cause_established": false,
+  "failure_interpretation": "Historical CLI attempts returned a generic failure whose exact cause was not established. Free funding subsequently arrived through the operator-reported official web faucet; these earlier failures are preserved as dated observations.",
+  "proof_of_work_review": {
+    "tool": "devnet-pow",
+    "version": "0.1.4",
+    "source_commit": "1efbcbf87497ed6d75a9bda373766ab11c5b4501",
+    "review_date_utc": "2026-10-05",
+    "recommended_by": "https://solana.com/developers/cookbook/development/airdrops-and-faucets",
+    "maintainer": "Ellipsis Labs",
+    "ordinary_airdrop_threshold_lamports": 5000,
+    "ordinary_airdrop_requested_lamports": 1000000000,
+    "bootstrap_source_url": "https://github.com/jarry-xiao/proof-of-work-faucet/blob/1efbcbf87497ed6d75a9bda373766ab11c5b4501/cli/src/main.rs#L270-L274",
+    "claim_source_url": "https://github.com/jarry-xiao/proof-of-work-faucet/blob/1efbcbf87497ed6d75a9bda373766ab11c5b4501/cli/src/main.rs#L395-L402",
+    "reward_transfer_source_url": "https://github.com/jarry-xiao/proof-of-work-faucet/blob/1efbcbf87497ed6d75a9bda373766ab11c5b4501/programs/proof-of-work-faucet/src/lib.rs#L116-L143",
+    "fee_semantics_source_url": "https://solana.com/docs/core/fees/fee-structure",
+    "claim_signature_count": 2,
+    "base_fee_lamports_at_review": 10000,
+    "constraint": "The empty payer first depends on an ordinary airdrop. The claim uses that same fee payer with two signatures; fees are debited before instruction execution, so the later reward cannot pay the initial fee. The reviewed client has no separate fee sponsor.",
+    "build_or_mining_performed": false,
+    "zero_balance_bootstrap_demonstrated": false,
+    "used_for_successful_funding": false
+  },
+  "ledger_evidence": {
+    "reliamesh_commitment_submitted": true,
+    "reliamesh_commitment_finalized": true,
+    "verification_record": "release-0.2.0/independent-verification.json",
+    "finalized_commitments": [
+      {
+        "snapshot": "regression",
+        "signature": "4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz",
+        "slot": 508201584,
+        "block_time": 1791315668,
+        "fee_lamports": 5000,
+        "commitment_sha256": "995bc2d37dfaa63890d370c1d051e85b46dd7b9aade1bcfc9d4b799a84a94c9c",
+        "explorer_url": "https://explorer.solana.com/tx/4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz?cluster=devnet"
+      },
+      {
+        "snapshot": "recovery",
+        "signature": "48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA",
+        "slot": 508201716,
+        "block_time": 1791315699,
+        "fee_lamports": 5000,
+        "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf",
+        "explorer_url": "https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet"
+      }
+    ]
+  },
+  "limitations": "Dated publisher-provided operational evidence. Finalized transaction data is checked through the official Devnet RPC; faucet website attribution comes from the operator-observed workflow. No claim of telemetry truth or independent third-party audit. No private key or operational credential is included.",
+  "last_pre_funding_cli_balance_check": {
+    "date_utc": "2026-10-06",
+    "check_run_started_at": "2026-10-06T06:10:15.905524+00:00",
+    "commitment": "finalized",
+    "lamports": 0,
+    "timing_note": "The before and after balance reads occurred within this CLI run; separate read timestamps were not recorded."
+  },
+  "funding_transfer": {
+    "verified_at": "2026-10-07T05:21:18.081669+00:00",
+    "signature": "2c65JQ8t1i7cxRbRVfgmKfZKZtZxYZXuPaVVCpky4hmf8TWsBU843yRFXjV6d2y4Jq7CNgF8q7vKFs1jipc7F9rc",
+    "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+    "recipient": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+    "slot": 508201210,
+    "block_time": 1791315578,
+    "block_time_utc": "2026-10-06T19:39:38+00:00",
+    "recipient_pre_balance_lamports": 0,
+    "recipient_post_balance_lamports": 500000000,
+    "recipient_delta_lamports": 500000000,
+    "finalized": true,
+    "transaction_error": false,
+    "explorer_url": "https://explorer.solana.com/tx/2c65JQ8t1i7cxRbRVfgmKfZKZtZxYZXuPaVVCpky4hmf8TWsBU843yRFXjV6d2y4Jq7CNgF8q7vKFs1jipc7F9rc?cluster=devnet",
+    "source_reported_by_operator": "Official Solana Foundation web faucet at https://faucet.solana.com/",
+    "source_attribution_note": "On-chain checks establish finalized receipt and balance delta; faucet website attribution comes from the operator-observed workflow.",
+    "rpc_read_methods": [
+      "getGenesisHash",
+      "getTransaction",
+      "getSignatureStatuses"
+    ],
+    "private_key_accessed": false,
+    "write_methods_called": 0
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "reliamesh-independent-devnet-verification/v1",
+  "verified_at": "2026-10-07T05:20:24.013Z",
+  "verified": true,
+  "method": "Independent canonical hashing and transaction reconstruction with official @solana/web3.js 1.98.4; raw transaction and historical status fetched directly from bounded official HTTPS RPC.",
+  "independence_scope": "A separate verification implementation operated by the publisher; not an independent third-party security audit or consensus light client.",
+  "sdk": {
+    "name": "@solana/web3.js",
+    "version": "1.98.4",
+    "reference": "https://solana-foundation.github.io/solana-web3.js/v1.x/classes/Transaction.html"
+  },
+  "rpc_endpoint": "https://api.devnet.solana.com",
+  "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "expected_signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+  "program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+  "checks_per_transaction": [
+    "canonical_bundle_hash",
+    "locally_verified_ed25519",
+    "exact_single_signed_memo",
+    "standard_sdk_roundtrip_identical",
+    "independent_sdk_reconstruction_identical",
+    "finalized_rpc_transaction",
+    "historical_finalized_status_same_slot",
+    "wrong_commitment_rejected",
+    "wrong_signer_rejected",
+    "altered_signature_rejected"
+  ],
+  "transactions": [
+    {
+      "snapshot": "regression",
+      "bundle": "regression-bundle.json",
+      "receipt": "regression-receipt.json",
+      "verified": true,
+      "commitment_sha256": "995bc2d37dfaa63890d370c1d051e85b46dd7b9aade1bcfc9d4b799a84a94c9c",
+      "signature": "4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz",
+      "slot": 508201584,
+      "block_time": 1791315668,
+      "fee_lamports": 5000,
+      "transaction_sha256": "1111aaa50e99758a25ff6ccf5aaeb81bd09bdf81b41039e3dee4f75c3e27cbb7",
+      "explorer_url": "https://explorer.solana.com/tx/4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz?cluster=devnet",
+      "block_time_utc": "2026-10-06T19:41:08+00:00",
+      "all_checks_passed": true,
+      "synthetic_report": true
+    },
+    {
+      "snapshot": "recovery",
+      "bundle": "recovery-bundle.json",
+      "receipt": "recovery-receipt.json",
+      "verified": true,
+      "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf",
+      "signature": "48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA",
+      "slot": 508201716,
+      "block_time": 1791315699,
+      "fee_lamports": 5000,
+      "transaction_sha256": "0628f79a447d041add0188e7eb72c386b3817114229d6b9d5812b7efdef17e48",
+      "explorer_url": "https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet",
+      "block_time_utc": "2026-10-06T19:41:39+00:00",
+      "all_checks_passed": true,
+      "synthetic_report": true
+    }
+  ],
+  "private_key_accessed": false,
+  "write_methods_called": 0,
+  "limitations": "Finalized inclusion relies on the official RPC. The reports are synthetic publisher assertions; verification does not establish telemetry truth, independent cohorts, completeness, causality or real-world observation time."
+}

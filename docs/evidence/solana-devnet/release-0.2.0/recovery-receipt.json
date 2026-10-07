@@ -1,0 +1,12 @@
+{
+  "slot": 508201716,
+  "block_time": 1791315699,
+  "fee_lamports": 5000,
+  "signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+  "signature": "48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA",
+  "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+  "program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+  "explorer_url": "https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet",
+  "verified": true,
+  "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf"
+}

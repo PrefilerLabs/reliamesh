@@ -1,0 +1,836 @@
+{
+  "schema_version": "reliamesh-release-verification/v1",
+  "assembled_at": "2026-10-07T05:25:04.308147+00:00",
+  "version": "0.2.0",
+  "tag": "v0.2.0",
+  "source_commit": "158dfd825130a2f95926a6844049dbdf4e2a84ba",
+  "owner": "Prefiler Labs Private Limited",
+  "repository": "https://github.com/PrefilerLabs/reliamesh",
+  "ci": {
+    "url": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320057826",
+    "headSha": "158dfd825130a2f95926a6844049dbdf4e2a84ba",
+    "createdAt": "2026-10-05T13:51:33Z",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "test (3.12)",
+        "conclusion": "success",
+        "url": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320057826/job/111796538282"
+      },
+      {
+        "name": "security",
+        "conclusion": "success",
+        "url": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320057826/job/111796538826"
+      },
+      {
+        "name": "container",
+        "conclusion": "success",
+        "url": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320057826/job/111796538844"
+      },
+      {
+        "name": "test (3.13)",
+        "conclusion": "success",
+        "url": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320057826/job/111796539009"
+      }
+    ],
+    "test_matrix": [
+      {
+        "name": "test (3.12)",
+        "passed": 392,
+        "skipped": 1,
+        "warnings": 2,
+        "seconds": 35.17,
+        "exact_summary": "392 passed, 1 skipped, 2 warnings in 35.17s",
+        "license_inventory_packages": 34,
+        "first_party_packages": 2,
+        "third_party_packages": 32,
+        "license_inventory_errors": [],
+        "license_roots": [
+          "reliamesh-server[gcp,attest]",
+          "reliamesh-sdk"
+        ]
+      },
+      {
+        "name": "test (3.13)",
+        "passed": 392,
+        "skipped": 1,
+        "warnings": 2,
+        "seconds": 32.02,
+        "exact_summary": "392 passed, 1 skipped, 2 warnings in 32.02s",
+        "license_inventory_packages": 34,
+        "first_party_packages": 2,
+        "third_party_packages": 32,
+        "license_inventory_errors": [],
+        "license_roots": [
+          "reliamesh-server[gcp,attest]",
+          "reliamesh-sdk"
+        ]
+      }
+    ],
+    "locked_runtime_audit": "No known vulnerabilities found",
+    "git_history_secret_scan": "no leaks found",
+    "container_job": "runtime imports and non-root identity passed; not an OS vulnerability scan"
+  },
+  "deployment_workflow": {
+    "url": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320895699",
+    "headSha": "158dfd825130a2f95926a6844049dbdf4e2a84ba",
+    "createdAt": "2026-10-05T13:57:55Z",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "url": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320895699/job/111799391611"
+      }
+    ],
+    "validation": {
+      "name": "deploy",
+      "passed": 392,
+      "skipped": 1,
+      "warnings": 2,
+      "seconds": 31.88,
+      "exact_summary": "392 passed, 1 skipped, 2 warnings in 31.88s",
+      "license_inventory_packages": 34,
+      "first_party_packages": 2,
+      "third_party_packages": 32,
+      "license_inventory_errors": [],
+      "license_roots": [
+        "reliamesh-server[gcp,attest]",
+        "reliamesh-sdk"
+      ]
+    },
+    "image_digest": "sha256:43e253084e69fb21882c691d5e8ef77b1f5018b1f33335948cde068326c753d8",
+    "revision": "reliamesh-api-00005-mkb",
+    "traffic_percent": 100,
+    "health_verification": "infra/deploy.ps1 checked /health status=ok; workflow does not itself prove authenticated ingestion or post-deploy OS scanning"
+  },
+  "publishing": {
+    "version": "0.2.0",
+    "repository": "https://github.com/PrefilerLabs/reliamesh",
+    "source_commit": "158dfd825130a2f95926a6844049dbdf4e2a84ba",
+    "tag": "v0.2.0",
+    "publishing_workflow": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320914593",
+    "registry_verified_at": "2026-10-06T06:09:44.159772+00:00",
+    "consolidated_at": "2026-10-06T19:38:46.866964+00:00",
+    "artifacts": [
+      {
+        "package": "reliamesh-server",
+        "filename": "reliamesh_server-0.2.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/c5/7c/a8e8b1bb25e4152b3cf5e67f5a0dce56d9d8a2655a4c186585cfc449ee92/reliamesh_server-0.2.0-py3-none-any.whl",
+        "sha256": "5ec8e7809a521a08e31123465345d8b50f9548b52dac8f6f0855469ebf4b5c67",
+        "bytes": 42288,
+        "workflow_and_pypi_hashes_match": true,
+        "expected_environment": "pypi-server",
+        "pypi_attestations_0_0_30_verified": true,
+        "publisher_identities": [
+          {
+            "environment": "pypi-server",
+            "kind": "GitHub",
+            "repository": "PrefilerLabs/reliamesh",
+            "workflow": "publish.yml"
+          }
+        ],
+        "signed_source_commit_and_tag_match": true
+      },
+      {
+        "package": "reliamesh-server",
+        "filename": "reliamesh_server-0.2.0.tar.gz",
+        "url": "https://files.pythonhosted.org/packages/d6/f6/d4368f90842ce9edc30ec8aac5ce49a096382b2d2de7c521d397f8212f6b/reliamesh_server-0.2.0.tar.gz",
+        "sha256": "5c471b387981c1d0a7707cb62c03558e485a5bc70d35fb7aa685a04d81550784",
+        "bytes": 171634,
+        "workflow_and_pypi_hashes_match": true,
+        "expected_environment": "pypi-server",
+        "pypi_attestations_0_0_30_verified": true,
+        "publisher_identities": [
+          {
+            "environment": "pypi-server",
+            "kind": "GitHub",
+            "repository": "PrefilerLabs/reliamesh",
+            "workflow": "publish.yml"
+          }
+        ],
+        "signed_source_commit_and_tag_match": true
+      },
+      {
+        "package": "reliamesh-sdk",
+        "filename": "reliamesh_sdk-0.2.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/0e/b8/46d4513a6df3978977c9bc80f89edf0c8c0c07ab63eb0fe13049c615f2d2/reliamesh_sdk-0.2.0-py3-none-any.whl",
+        "sha256": "765562e2ba48729c02e9415a4d0646d80f961acec5c31e87246c6ac19b0d3a7f",
+        "bytes": 14319,
+        "workflow_and_pypi_hashes_match": true,
+        "expected_environment": "pypi",
+        "pypi_attestations_0_0_30_verified": true,
+        "publisher_identities": [
+          {
+            "environment": "pypi",
+            "kind": "GitHub",
+            "repository": "PrefilerLabs/reliamesh",
+            "workflow": "publish.yml"
+          }
+        ],
+        "signed_source_commit_and_tag_match": true
+      },
+      {
+        "package": "reliamesh-sdk",
+        "filename": "reliamesh_sdk-0.2.0.tar.gz",
+        "url": "https://files.pythonhosted.org/packages/9c/f7/68e317ac437e6491dabb123cde5985a30f8228ec63af21890739a153f4d2/reliamesh_sdk-0.2.0.tar.gz",
+        "sha256": "4f720f9608a5455f0394faea2a1d6ac8579bf5060406732965c0673c42102f7e",
+        "bytes": 14824,
+        "workflow_and_pypi_hashes_match": true,
+        "expected_environment": "pypi",
+        "pypi_attestations_0_0_30_verified": true,
+        "publisher_identities": [
+          {
+            "environment": "pypi",
+            "kind": "GitHub",
+            "repository": "PrefilerLabs/reliamesh",
+            "workflow": "publish.yml"
+          }
+        ],
+        "signed_source_commit_and_tag_match": true
+      }
+    ],
+    "all_four_artifact_hashes_and_attestations_verified": true,
+    "installed_wheel_hashes_match_verified_registry_artifacts": true,
+    "clean_pypi_install": {
+      "synthetic": true,
+      "version": "0.2.0",
+      "python": "3.12.10",
+      "packages_imported_from_clean_environment": true,
+      "sdk_runtime_dependencies": [],
+      "accepted": 200,
+      "regression": "detected",
+      "recovery": "resolved",
+      "dropped": 0,
+      "source": "pypi",
+      "backup_created": true,
+      "backup_overwrite_rejected": true,
+      "backup_restore_summary_identical": true,
+      "active_state_survives_purge": true
+    },
+    "default_environment": {
+      "python": "3.12.10",
+      "default_install_has_no_crypto": true,
+      "server_version": "0.2.0",
+      "sdk_version": "0.2.0",
+      "imported_from_clean_environment": true,
+      "sdk_runtime_dependencies": []
+    },
+    "published_optional_attestation_cli": {
+      "cli_report": true,
+      "cli_keygen": true,
+      "cli_prepare": true,
+      "optional_crypto_version": "50.0.2",
+      "transaction_build": true,
+      "offline_signature_verified": true,
+      "tamper_cases_rejected": 3,
+      "synthetic_offline_projection_fixture": true,
+      "ledger_submission_or_inclusion_claimed": false,
+      "verified_at": "2026-10-06T06:11:11.593259+00:00"
+    },
+    "scope": "Registry/provenance reads and localhost verification only; no publication or production writes",
+    "ledger_proof_claimed": false
+  },
+  "live_api_verification": {
+    "verified_at": "2026-10-06T06:07:27.737309+00:00",
+    "endpoint": "https://api.reliamesh.com",
+    "synthetic": true,
+    "accepted": 201,
+    "duplicate_replay": "deduplicated",
+    "regression": "detected",
+    "recovery": "resolved",
+    "tenant_isolation": "passed",
+    "privacy_schema": "passed",
+    "scope_enforcement": "passed",
+    "revocation": "passed",
+    "storage_readiness": "passed",
+    "network_intelligence": "disabled"
+  },
+  "tls_verification": {
+    "verified_at": "2026-10-06T06:08:12.145267+00:00",
+    "domains": [
+      {
+        "host": "reliamesh.com",
+        "resolved_addresses": [
+          "34.144.230.119",
+          "64:ff9b::2290:e677"
+        ],
+        "tls": "TLSv1.3",
+        "certificate_not_after": "Dec 21 15:31:37 2026 GMT",
+        "hostname_verified": true,
+        "health": {
+          "status": "ok",
+          "version": "0.2.0"
+        }
+      },
+      {
+        "host": "www.reliamesh.com",
+        "resolved_addresses": [
+          "34.144.230.119",
+          "64:ff9b::2290:e677"
+        ],
+        "tls": "TLSv1.3",
+        "certificate_not_after": "Dec 21 15:31:37 2026 GMT",
+        "hostname_verified": true,
+        "health": {
+          "status": "ok",
+          "version": "0.2.0"
+        }
+      },
+      {
+        "host": "api.reliamesh.com",
+        "resolved_addresses": [
+          "34.144.230.119",
+          "64:ff9b::2290:e677"
+        ],
+        "tls": "TLSv1.3",
+        "certificate_not_after": "Dec 21 15:31:37 2026 GMT",
+        "hostname_verified": true,
+        "health": {
+          "status": "ok",
+          "version": "0.2.0"
+        }
+      }
+    ]
+  },
+  "deployed_container": {
+    "reviewed_at_utc": "2026-10-06T19:39:40.964385791Z",
+    "project": "reliamesh",
+    "region": "asia-south1",
+    "service": "reliamesh-api",
+    "revision": "reliamesh-api-00005-mkb",
+    "ready": true,
+    "traffic_percent": 100,
+    "deployment_observed_date_utc": "2026-10-06",
+    "deployment_run": "https://github.com/PrefilerLabs/reliamesh/actions/runs/37320895699",
+    "deployment_run_conclusion": "success",
+    "source_commit": "158dfd825130a2f95926a6844049dbdf4e2a84ba",
+    "deployed_image": "asia-south1-docker.pkg.dev/reliamesh/reliamesh/api@sha256:43e253084e69fb21882c691d5e8ef77b1f5018b1f33335948cde068326c753d8",
+    "image_config": "sha256:b5998f51fbdf22003cc7e032c6679294572d1769ebf057f68868228aea58dd12",
+    "architecture": "linux/amd64",
+    "runtime_package_version": "0.2.0",
+    "scanner": "Trivy 0.74.0",
+    "db_repository": "public.ecr.aws/aquasecurity/trivy-db:2",
+    "db_updated_at_utc": "2026-10-06T01:08:27.80517672Z",
+    "db_downloaded_at_utc": "2026-10-06T06:10:09.111931429Z",
+    "scan_report": "deployed-0.2.0-container-scan.json",
+    "archive_sha256": "208236894c9ba283bc5fbda3a4bff743291a83b3b8ad6af460c46cb56742df27",
+    "report_sha256": "07dad901b92d10a2ef5fd43c9fb5f37f6593ba5f3fc9207784e543b2497bba13",
+    "severity_counts": [
+      {
+        "Name": "HIGH",
+        "Count": 44
+      },
+      {
+        "Name": "LOW",
+        "Count": 61
+      },
+      {
+        "Name": "MEDIUM",
+        "Count": 59
+      },
+      {
+        "Name": "UNKNOWN",
+        "Count": 2
+      }
+    ],
+    "critical_count": 0,
+    "fixable_high_critical": 0,
+    "all_fixable_records": 0,
+    "remaining_high_cves": [
+      {
+        "Name": "CVE-2025-69720",
+        "Count": 4
+      },
+      {
+        "Name": "CVE-2026-16742",
+        "Count": 2
+      },
+      {
+        "Name": "CVE-2026-54369",
+        "Count": 1
+      },
+      {
+        "Name": "CVE-2026-76642",
+        "Count": 9
+      },
+      {
+        "Name": "CVE-2026-78408",
+        "Count": 9
+      },
+      {
+        "Name": "CVE-2026-78409",
+        "Count": 9
+      },
+      {
+        "Name": "CVE-2026-78410",
+        "Count": 9
+      },
+      {
+        "Name": "CVE-2026-9538",
+        "Count": 1
+      }
+    ],
+    "python_high_critical": 0,
+    "installed_patches": {
+      "openssl-provider-legacy": "3.5.7-1~deb13u3",
+      "openssl": "3.5.7-1~deb13u3",
+      "libssl3t64": "3.5.7-1~deb13u3",
+      "libpcre2-8-0": "10.46-1~deb13u3"
+    },
+    "smoke": {
+      "health": 200,
+      "observed_date_utc": "2026-10-06",
+      "uid": 10001,
+      "authenticated_synthetic_ingestion": true,
+      "set_id_file_count": 0,
+      "network": "none",
+      "exit_code": 0,
+      "systemd_homed_present": false,
+      "perl_archive_tar_present": false,
+      "replay_deduplication": true,
+      "firestore_import": true,
+      "summary": true,
+      "bootstrap_tools_removed": true
+    },
+    "limitations": [
+      "44 HIGH package records across eight unfixed Debian CVEs remain; no findings suppressed",
+      "Runtime smoke uses isolated local SQLite and no container network; live endpoint verification is separate",
+      "No source or cloud mutations performed during this audit"
+    ],
+    "db_next_update_utc": "2026-10-07T01:08:27.805176349Z",
+    "reviewed_local_date": "2026-10-07 Asia/Kolkata"
+  },
+  "solana_devnet": {
+    "execution.json": {
+      "verified_at": "2026-10-06T06:08:08.059605+00:00",
+      "endpoint": "https://api.reliamesh.com",
+      "server_health": {
+        "status": "ok",
+        "version": "0.2.0"
+      },
+      "synthetic": true,
+      "scenario": "Solana RPC readiness fixtures; no real RPC outage",
+      "checks": 200,
+      "ready": 150,
+      "deferred": 50,
+      "evidence": {
+        "accepted": 200,
+        "duplicates": 0,
+        "sent": 200,
+        "dropped": 0,
+        "queued": 0,
+        "incident_opened": true,
+        "incident_recovered": true
+      },
+      "reports": {
+        "regression": {
+          "commitment_sha256": "995bc2d37dfaa63890d370c1d051e85b46dd7b9aade1bcfc9d4b799a84a94c9c",
+          "report": {
+            "schema_version": "reliamesh-window-report/v1",
+            "telemetry_schema": "1.0",
+            "server_version": "0.2.0",
+            "generated_at": "2026-10-06T06:08:08.059605Z",
+            "synthetic": true,
+            "stream_count": 1,
+            "baseline_samples": 50,
+            "baseline_failures": 0,
+            "current_samples": 50,
+            "current_failures": 50,
+            "open_incidents": 1,
+            "resolved_incidents": 0,
+            "expired_incidents": 0
+          }
+        },
+        "recovery": {
+          "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf",
+          "report": {
+            "schema_version": "reliamesh-window-report/v1",
+            "telemetry_schema": "1.0",
+            "server_version": "0.2.0",
+            "generated_at": "2026-10-06T06:08:08.059605Z",
+            "synthetic": true,
+            "stream_count": 1,
+            "baseline_samples": 50,
+            "baseline_failures": 0,
+            "current_samples": 50,
+            "current_failures": 0,
+            "open_incidents": 0,
+            "resolved_incidents": 1,
+            "expired_incidents": 0
+          }
+        }
+      },
+      "live_rpc_readiness": {
+        "decision": "continue_planning",
+        "outcome": "success",
+        "failure_type": null,
+        "reason": "readiness_checks_passed",
+        "synthetic": false
+      },
+      "disposable_tenant_deleted": true
+    },
+    "regression-bundle.json": {
+      "schema_version": "reliamesh-devnet-commitment/v1",
+      "network": "solana-devnet",
+      "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "expected_signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+      "salt_hex": "da9da28b9d489230f51c8965d1d4b6b744203a32de84aeaf78147a9a98ed05f1",
+      "report": {
+        "schema_version": "reliamesh-window-report/v1",
+        "telemetry_schema": "1.0",
+        "server_version": "0.2.0",
+        "generated_at": "2026-10-06T06:08:08.059605Z",
+        "synthetic": true,
+        "stream_count": 1,
+        "baseline_samples": 50,
+        "baseline_failures": 0,
+        "current_samples": 50,
+        "current_failures": 50,
+        "open_incidents": 1,
+        "resolved_incidents": 0,
+        "expired_incidents": 0
+      }
+    },
+    "recovery-bundle.json": {
+      "schema_version": "reliamesh-devnet-commitment/v1",
+      "network": "solana-devnet",
+      "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "expected_signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+      "salt_hex": "312801db9eecf13907080453cb410c2bd2d582259e9510977b2bf6cbf9e15f7c",
+      "report": {
+        "schema_version": "reliamesh-window-report/v1",
+        "telemetry_schema": "1.0",
+        "server_version": "0.2.0",
+        "generated_at": "2026-10-06T06:08:08.059605Z",
+        "synthetic": true,
+        "stream_count": 1,
+        "baseline_samples": 50,
+        "baseline_failures": 0,
+        "current_samples": 50,
+        "current_failures": 0,
+        "open_incidents": 0,
+        "resolved_incidents": 1,
+        "expired_incidents": 0
+      }
+    },
+    "regression-receipt.json": {
+      "slot": 508201584,
+      "block_time": 1791315668,
+      "fee_lamports": 5000,
+      "signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+      "signature": "4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz",
+      "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+      "explorer_url": "https://explorer.solana.com/tx/4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz?cluster=devnet",
+      "verified": true,
+      "commitment_sha256": "995bc2d37dfaa63890d370c1d051e85b46dd7b9aade1bcfc9d4b799a84a94c9c"
+    },
+    "recovery-receipt.json": {
+      "slot": 508201716,
+      "block_time": 1791315699,
+      "fee_lamports": 5000,
+      "signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+      "signature": "48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA",
+      "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+      "explorer_url": "https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet",
+      "verified": true,
+      "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf"
+    },
+    "independent-verification.json": {
+      "schema_version": "reliamesh-independent-devnet-verification/v1",
+      "verified_at": "2026-10-07T05:20:24.013Z",
+      "verified": true,
+      "method": "Independent canonical hashing and transaction reconstruction with official @solana/web3.js 1.98.4; raw transaction and historical status fetched directly from bounded official HTTPS RPC.",
+      "independence_scope": "A separate verification implementation operated by the publisher; not an independent third-party security audit or consensus light client.",
+      "sdk": {
+        "name": "@solana/web3.js",
+        "version": "1.98.4",
+        "reference": "https://solana-foundation.github.io/solana-web3.js/v1.x/classes/Transaction.html"
+      },
+      "rpc_endpoint": "https://api.devnet.solana.com",
+      "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "expected_signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+      "program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+      "checks_per_transaction": [
+        "canonical_bundle_hash",
+        "locally_verified_ed25519",
+        "exact_single_signed_memo",
+        "standard_sdk_roundtrip_identical",
+        "independent_sdk_reconstruction_identical",
+        "finalized_rpc_transaction",
+        "historical_finalized_status_same_slot",
+        "wrong_commitment_rejected",
+        "wrong_signer_rejected",
+        "altered_signature_rejected"
+      ],
+      "transactions": [
+        {
+          "snapshot": "regression",
+          "bundle": "regression-bundle.json",
+          "receipt": "regression-receipt.json",
+          "verified": true,
+          "commitment_sha256": "995bc2d37dfaa63890d370c1d051e85b46dd7b9aade1bcfc9d4b799a84a94c9c",
+          "signature": "4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz",
+          "slot": 508201584,
+          "block_time": 1791315668,
+          "fee_lamports": 5000,
+          "transaction_sha256": "1111aaa50e99758a25ff6ccf5aaeb81bd09bdf81b41039e3dee4f75c3e27cbb7",
+          "explorer_url": "https://explorer.solana.com/tx/4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz?cluster=devnet",
+          "block_time_utc": "2026-10-06T19:41:08+00:00",
+          "all_checks_passed": true,
+          "synthetic_report": true
+        },
+        {
+          "snapshot": "recovery",
+          "bundle": "recovery-bundle.json",
+          "receipt": "recovery-receipt.json",
+          "verified": true,
+          "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf",
+          "signature": "48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA",
+          "slot": 508201716,
+          "block_time": 1791315699,
+          "fee_lamports": 5000,
+          "transaction_sha256": "0628f79a447d041add0188e7eb72c386b3817114229d6b9d5812b7efdef17e48",
+          "explorer_url": "https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet",
+          "block_time_utc": "2026-10-06T19:41:39+00:00",
+          "all_checks_passed": true,
+          "synthetic_report": true
+        }
+      ],
+      "private_key_accessed": false,
+      "write_methods_called": 0,
+      "limitations": "Finalized inclusion relies on the official RPC. The reports are synthetic publisher assertions; verification does not establish telemetry truth, independent cohorts, completeness, causality or real-world observation time."
+    }
+  },
+  "published_cli_ledger_verification": {
+    "verified_at": "2026-10-07T05:21:30.724635+00:00",
+    "version": "0.2.0",
+    "python": "3.12.10",
+    "cryptography": "50.0.2",
+    "published_package_imported_from_isolated_environment": true,
+    "package_provenance_evidence": "verification.json#publishing",
+    "expected_signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+    "expected_genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+    "expected_program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+    "rpc_endpoint": "https://api.devnet.solana.com",
+    "cases": [
+      {
+        "case": "regression",
+        "bundle": "docs/evidence/solana-devnet/release-0.2.0/regression-bundle.json",
+        "bundle_file_sha256": "1bcbcc916633244947d186bc25035e55013a0bfa1356c94aec786bb74f261c2b",
+        "synthetic": true,
+        "commitment_sha256": "995bc2d37dfaa63890d370c1d051e85b46dd7b9aade1bcfc9d4b799a84a94c9c",
+        "published_cli_verified_finalized": true,
+        "receipt_matches_public_and_operator_copies": true,
+        "receipt": {
+          "slot": 508201584,
+          "block_time": 1791315668,
+          "fee_lamports": 5000,
+          "signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+          "signature": "4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz",
+          "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+          "program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+          "explorer_url": "https://explorer.solana.com/tx/4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz?cluster=devnet",
+          "verified": true
+        },
+        "public_signed_transaction_sha256": "1111aaa50e99758a25ff6ccf5aaeb81bd09bdf81b41039e3dee4f75c3e27cbb7",
+        "altered_report": {
+          "schema_valid": true,
+          "cli_exit": 1,
+          "rejected": true,
+          "actual_signed_transaction_rejection": "transaction_message_mismatch"
+        },
+        "wrong_trusted_signer": {
+          "cli_exit": 1,
+          "rejected": true,
+          "cli_rejection_scope": "trusted signer differs from bundle before RPC",
+          "actual_signed_transaction_rejection": "transaction_message_mismatch"
+        }
+      },
+      {
+        "case": "recovery",
+        "bundle": "docs/evidence/solana-devnet/release-0.2.0/recovery-bundle.json",
+        "bundle_file_sha256": "92d0c561e5fb3c49f6266278508c7923572742fe38f6af88d746000e5a2d6dee",
+        "synthetic": true,
+        "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf",
+        "published_cli_verified_finalized": true,
+        "receipt_matches_public_and_operator_copies": true,
+        "receipt": {
+          "slot": 508201716,
+          "block_time": 1791315699,
+          "fee_lamports": 5000,
+          "signer": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+          "signature": "48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA",
+          "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+          "program_id": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+          "explorer_url": "https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet",
+          "verified": true
+        },
+        "public_signed_transaction_sha256": "0628f79a447d041add0188e7eb72c386b3817114229d6b9d5812b7efdef17e48",
+        "altered_report": {
+          "schema_valid": true,
+          "cli_exit": 1,
+          "rejected": true,
+          "actual_signed_transaction_rejection": "transaction_message_mismatch"
+        },
+        "wrong_trusted_signer": {
+          "cli_exit": 1,
+          "rejected": true,
+          "cli_rejection_scope": "trusted signer differs from bundle before RPC",
+          "actual_signed_transaction_rejection": "transaction_message_mismatch"
+        }
+      }
+    ],
+    "both_finalized_verified": true,
+    "both_negative_cases_rejected_for_each_receipt": true,
+    "private_keys_accessed": false,
+    "ledger_writes_performed": false,
+    "scope": "Public Devnet reads and local evidence files only; no source edits or publication.",
+    "limitations": [
+      "Synthetic reports remain operator assertions, not adoption or production reliability evidence.",
+      "Finalized ledger inclusion verifies signer and commitment binding, not truth of the report.",
+      "Live verification depends on official Devnet RPC availability and retained transaction history."
+    ],
+    "bundle_file_hash_note": "Public JSON files normalized to LF after verification; canonical report commitments and signed transaction bytes unchanged."
+  },
+  "free_devnet_funding": {
+    "schema_version": "reliamesh-devnet-funding-status/v1",
+    "evidence_as_of_date_utc": "2026-10-07",
+    "status": "funded_commitments_finalized",
+    "cluster": "solana-devnet",
+    "rpc_endpoint": "https://api.devnet.solana.com",
+    "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+    "public_key": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+    "official_cli": {
+      "name": "solana-cli",
+      "version": "4.3.0",
+      "implementation": "Anza Agave",
+      "execution_environment": "isolated Docker container",
+      "release_url": "https://github.com/anza-xyz/agave/releases/tag/v4.3.0",
+      "release_archive": "solana-release-x86_64-unknown-linux-gnu.tar.bz2",
+      "release_archive_sha256": "c97289a8abb1d0efb497d8b5cb285baabd9b7f8ea6647f5d145c5dc8ff3611e8",
+      "vendor_digest_verified": true,
+      "private_key_accessed_for_checks": false
+    },
+    "attempts": [
+      {
+        "run_started_at": "2026-10-05T13:53:48.750865+00:00",
+        "genesis_verified": true,
+        "cli_invocations": 1,
+        "requested_lamports": 10000000,
+        "exit_code": 1,
+        "cli_message": "airdrop request failed. This can happen when the rate limit is reached.",
+        "http_429_observed": false,
+        "retry_after_seconds_observed": null,
+        "automatic_http_429_retry_observed": false,
+        "balance_commitment": "finalized",
+        "balance_before_lamports": 0,
+        "balance_after_lamports": 0
+      },
+      {
+        "run_started_at": "2026-10-06T06:10:15.905524+00:00",
+        "genesis_verified": true,
+        "cli_invocations": 1,
+        "requested_lamports": 10000000,
+        "exit_code": 1,
+        "cli_message": "airdrop request failed. This can happen when the rate limit is reached.",
+        "http_429_observed": false,
+        "retry_after_seconds_observed": null,
+        "automatic_http_429_retry_observed": false,
+        "balance_commitment": "finalized",
+        "balance_before_lamports": 0,
+        "balance_after_lamports": 0
+      }
+    ],
+    "failure_cause_established": false,
+    "failure_interpretation": "Historical CLI attempts returned a generic failure whose exact cause was not established. Free funding subsequently arrived through the operator-reported official web faucet; these earlier failures are preserved as dated observations.",
+    "proof_of_work_review": {
+      "tool": "devnet-pow",
+      "version": "0.1.4",
+      "source_commit": "1efbcbf87497ed6d75a9bda373766ab11c5b4501",
+      "review_date_utc": "2026-10-05",
+      "recommended_by": "https://solana.com/developers/cookbook/development/airdrops-and-faucets",
+      "maintainer": "Ellipsis Labs",
+      "ordinary_airdrop_threshold_lamports": 5000,
+      "ordinary_airdrop_requested_lamports": 1000000000,
+      "bootstrap_source_url": "https://github.com/jarry-xiao/proof-of-work-faucet/blob/1efbcbf87497ed6d75a9bda373766ab11c5b4501/cli/src/main.rs#L270-L274",
+      "claim_source_url": "https://github.com/jarry-xiao/proof-of-work-faucet/blob/1efbcbf87497ed6d75a9bda373766ab11c5b4501/cli/src/main.rs#L395-L402",
+      "reward_transfer_source_url": "https://github.com/jarry-xiao/proof-of-work-faucet/blob/1efbcbf87497ed6d75a9bda373766ab11c5b4501/programs/proof-of-work-faucet/src/lib.rs#L116-L143",
+      "fee_semantics_source_url": "https://solana.com/docs/core/fees/fee-structure",
+      "claim_signature_count": 2,
+      "base_fee_lamports_at_review": 10000,
+      "constraint": "The empty payer first depends on an ordinary airdrop. The claim uses that same fee payer with two signatures; fees are debited before instruction execution, so the later reward cannot pay the initial fee. The reviewed client has no separate fee sponsor.",
+      "build_or_mining_performed": false,
+      "zero_balance_bootstrap_demonstrated": false,
+      "used_for_successful_funding": false
+    },
+    "ledger_evidence": {
+      "reliamesh_commitment_submitted": true,
+      "reliamesh_commitment_finalized": true,
+      "verification_record": "release-0.2.0/independent-verification.json",
+      "finalized_commitments": [
+        {
+          "snapshot": "regression",
+          "signature": "4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz",
+          "slot": 508201584,
+          "block_time": 1791315668,
+          "fee_lamports": 5000,
+          "commitment_sha256": "995bc2d37dfaa63890d370c1d051e85b46dd7b9aade1bcfc9d4b799a84a94c9c",
+          "explorer_url": "https://explorer.solana.com/tx/4PEYeeFiF6HxX8TPVd9mvcRrxHCub2oV4NBZkwUU1oXxvCKRsMGP6hgih5sDd3Mn4XehRh8mwp88Foe9BUzf4Khz?cluster=devnet"
+        },
+        {
+          "snapshot": "recovery",
+          "signature": "48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA",
+          "slot": 508201716,
+          "block_time": 1791315699,
+          "fee_lamports": 5000,
+          "commitment_sha256": "abc716249fca4e1a3c316cbe506f76de8c6772956a1240a8287dfa2de5b6e8cf",
+          "explorer_url": "https://explorer.solana.com/tx/48n9Bfqu3sM8UYWgSavK8Lkj7vvTwPi8FfBbuw8yehJd1jV8bu8HMDAos9TsMxMNeqt8CDEdEZeaZeoP3gLYobxA?cluster=devnet"
+        }
+      ]
+    },
+    "limitations": "Dated publisher-provided operational evidence. Finalized transaction data is checked through the official Devnet RPC; faucet website attribution comes from the operator-observed workflow. No claim of telemetry truth or independent third-party audit. No private key or operational credential is included.",
+    "last_pre_funding_cli_balance_check": {
+      "date_utc": "2026-10-06",
+      "check_run_started_at": "2026-10-06T06:10:15.905524+00:00",
+      "commitment": "finalized",
+      "lamports": 0,
+      "timing_note": "The before and after balance reads occurred within this CLI run; separate read timestamps were not recorded."
+    },
+    "funding_transfer": {
+      "verified_at": "2026-10-07T05:21:18.081669+00:00",
+      "signature": "2c65JQ8t1i7cxRbRVfgmKfZKZtZxYZXuPaVVCpky4hmf8TWsBU843yRFXjV6d2y4Jq7CNgF8q7vKFs1jipc7F9rc",
+      "genesis_hash": "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG",
+      "recipient": "CZvbnEgAZGfbJn2LxgK9xCSLGRc4fzboLyaduLUjphR5",
+      "slot": 508201210,
+      "block_time": 1791315578,
+      "block_time_utc": "2026-10-06T19:39:38+00:00",
+      "recipient_pre_balance_lamports": 0,
+      "recipient_post_balance_lamports": 500000000,
+      "recipient_delta_lamports": 500000000,
+      "finalized": true,
+      "transaction_error": false,
+      "explorer_url": "https://explorer.solana.com/tx/2c65JQ8t1i7cxRbRVfgmKfZKZtZxYZXuPaVVCpky4hmf8TWsBU843yRFXjV6d2y4Jq7CNgF8q7vKFs1jipc7F9rc?cluster=devnet",
+      "source_reported_by_operator": "Official Solana Foundation web faucet at https://faucet.solana.com/",
+      "source_attribution_note": "On-chain checks establish finalized receipt and balance delta; faucet website attribution comes from the operator-observed workflow.",
+      "rpc_read_methods": [
+        "getGenesisHash",
+        "getTransaction",
+        "getSignatureStatuses"
+      ],
+      "private_key_accessed": false,
+      "write_methods_called": 0
+    }
+  },
+  "limitations": [
+    "All reliability exercises are synthetic; no independent adoption, accuracy calibration or SLA is claimed.",
+    "Ledger verification checks report bytes, signer and official-RPC finalized inclusion, not telemetry truth.",
+    "Devnet may reset or prune history; no mainnet program or transaction is deployed.",
+    "The source tag predates these final proof records; this is a dated release evidence supplement.",
+    "44 HIGH package records across eight unfixed Debian CVEs remain; this is not an independent security audit."
+  ]
+}
