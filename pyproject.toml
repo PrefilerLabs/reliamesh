@@ -31,6 +31,9 @@ reliamesh-attest = "reliamesh.attest_cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+reliamesh = ["static/reliamesh-mark.png", "static/favicon-32.png", "static/favicon.ico", "static/apple-touch-icon.png"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src", "sdk/python/src"]

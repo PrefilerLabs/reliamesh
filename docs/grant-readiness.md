@@ -115,8 +115,8 @@ Only GCP project **`reliamesh`** is used. Cloud Run in **asia-south1** runs the 
 Firestore Standard Native storage, seven-day PITR and deletion protection. HTTPS serves
 `reliamesh.com`, `www.reliamesh.com` and `api.reliamesh.com` through a global load balancer.
 All three returned version **0.2.0** on 6 October 2026, with hostname-verified TLS 1.3
-and a certificate expiring 21 December 2026. Cloud Run revision
-`reliamesh-api-00005-mkb` receives 100% of service traffic. The deployed image is
+and a certificate expiring 21 December 2026. At that release verification, Cloud Run revision
+`reliamesh-api-00005-mkb` received 100% of service traffic. Its deployed image was
 `asia-south1-docker.pkg.dev/reliamesh/reliamesh/api@sha256:43e253084e69fb21882c691d5e8ef77b1f5018b1f33335948cde068326c753d8`,
 built from release commit `158dfd825130a2f95926a6844049dbdf4e2a84ba`.
 Monitoring covers API

@@ -4,12 +4,13 @@ import hmac
 import logging
 import re
 from datetime import UTC, datetime
+from importlib.resources import files
 from typing import Annotated, Literal
 from uuid import uuid4
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -21,6 +22,12 @@ from reliamesh.security import Limiter, digest_key, new_key
 from reliamesh.storage import StorageLimit, TenantExists, TenantMissing
 
 LOG = logging.getLogger("reliamesh")
+BRAND_ASSETS = {
+    "/assets/reliamesh-mark.png": ("reliamesh-mark.png", "image/png"),
+    "/favicon-32.png": ("favicon-32.png", "image/png"),
+    "/favicon.ico": ("favicon.ico", "image/x-icon"),
+    "/apple-touch-icon.png": ("apple-touch-icon.png", "image/png"),
+}
 TenantId = Annotated[str, Field(pattern=r"^[a-z0-9][a-z0-9_-]{2,63}$")]
 
 
@@ -80,7 +87,7 @@ class SafetyMiddleware:
                     (b"x-content-type-options", b"nosniff"),
                     (b"referrer-policy", b"no-referrer"),
                     (b"cache-control", b"no-store"),
-                    (b"content-security-policy", b"default-src 'none'; style-src 'unsafe-inline'; frame-ancestors 'none'"),
+                    (b"content-security-policy", b"default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; frame-ancestors 'none'"),
                     (b"strict-transport-security", b"max-age=31536000"),
                 ]
             await send(message)
@@ -91,7 +98,8 @@ class SafetyMiddleware:
                 response.headers["Retry-After"] = "60"
             await response(scope, receive, safe_send)
 
-        if scope["path"] not in {"/health", "/"} and not self.global_limit.allow("all"):
+        public_asset = scope["method"] in {"GET", "HEAD"} and scope["path"] in BRAND_ASSETS
+        if scope["path"] not in {"/health", "/"} and not public_asset and not self.global_limit.allow("all"):
             return await reject(429, "rate_limited")
         headers = dict(scope.get("headers", []))
         if headers.get(b"content-encoding", b"identity") != b"identity":
@@ -308,18 +316,41 @@ def create_app(settings=None, store=None):
     def home():
         return LANDING
 
+    brand_content = {
+        path: (files("reliamesh").joinpath("static", name).read_bytes(), media_type)
+        for path, (name, media_type) in BRAND_ASSETS.items()
+    }
+
+    @app.api_route("/assets/reliamesh-mark.png", methods=["GET", "HEAD"], include_in_schema=False)
+    @app.api_route("/favicon-32.png", methods=["GET", "HEAD"], include_in_schema=False)
+    @app.api_route("/favicon.ico", methods=["GET", "HEAD"], include_in_schema=False)
+    @app.api_route("/apple-touch-icon.png", methods=["GET", "HEAD"], include_in_schema=False)
+    def brand_asset(request: Request):
+        content, media_type = brand_content[request.scope["path"]]
+        return Response(content if request.method == "GET" else b"", media_type=media_type,
+                        headers={"Content-Length": str(len(content))})
+
     app.add_middleware(SafetyMiddleware, settings=settings)
     return app
 
 
-LANDING = """<!doctype html><html lang="en"><meta charset="utf-8">
+LANDING = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ReliaMesh — Reliability infrastructure for AI agents</title>
+<meta name="theme-color" content="#101b24">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <style>body{margin:0;background:#101b24;color:#eaf0f3;font:18px/1.7 system-ui,sans-serif}
 main{max-width:880px;margin:auto;padding:9vh 7vw}small{color:#7edcbd;letter-spacing:.13em}
+.brand{display:flex;align-items:center;gap:14px;width:fit-content;text-decoration:none;margin-bottom:24px;color:#eaf0f3}
+.brand img{display:block;width:56px;height:56px;flex:none}.wordmark{font-size:32px;font-weight:700;letter-spacing:-.045em;line-height:1.1}
+.brand:focus-visible{outline:2px solid #7edcbd;outline-offset:8px;border-radius:4px}
 h1{font-size:clamp(36px,6vw,66px);line-height:1.12;letter-spacing:-.04em}p{color:#b9cad5;max-width:720px}
 a{color:#7edcbd}code{background:#1d303b;padding:4px 8px}footer{border-top:1px solid #304550;margin-top:70px;padding-top:20px;font-size:14px}
-</style><main><small>RELIAMESH / OPEN-SOURCE INFRASTRUCTURE</small>
+</style></head><body><main>
+<header><a class="brand" href="/" aria-label="ReliaMesh home"><img src="/assets/reliamesh-mark.png" width="56" height="56" alt=""><span class="wordmark">ReliaMesh</span></a>
+<small>OPEN-SOURCE RELIABILITY INFRASTRUCTURE</small></header>
 <h1>When an agent runs,<br>did it actually work?</h1>
 <p>Measure agent failures, detect version-associated regressions, and track recovery
 using structured reliability signals. API uptime alone does not tell that story.</p>
@@ -341,7 +372,6 @@ the ledger does not establish whether the underlying telemetry is truthful.</p>
 <a href="https://github.com/PrefilerLabs/reliamesh/blob/main/docs/solana-agent-example.md">Run the Solana agent example</a> ·
 <a href="https://github.com/PrefilerLabs/reliamesh/releases">Releases</a></p>
 <footer>© 2026 Prefiler Labs Private Limited. ReliaMesh core is licensed under Apache-2.0.</footer>
-</main></html>"""
-
+</main></body></html>"""
 
 

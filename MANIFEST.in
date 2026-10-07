@@ -3,6 +3,9 @@ include LICENSE NOTICE README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md
 include AGENTS.md requirements.lock Dockerfile compose.yaml
 include .dockerignore .gitignore
 recursive-include docs *.md *.json *.svg
+recursive-include docs/brand *.png *.txt
+include src/reliamesh/static/reliamesh-mark.png src/reliamesh/static/favicon-32.png
+include src/reliamesh/static/favicon.ico src/reliamesh/static/apple-touch-icon.png
 recursive-include tests *.py
 recursive-include schemas *.json
 include scripts/check_licenses.py scripts/verify_deployment.py
